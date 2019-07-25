@@ -12,8 +12,8 @@ public class DemoService {
     @Autowired
     private MyStoredProcedure myStoredProcedure;
 
-    public Map<String, Object> get() {
-        return myStoredProcedure.execute();
+    public Map<String, Object> get(int seconds) {
+        return myStoredProcedure.execute(seconds);
     }
 }
 

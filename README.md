@@ -9,13 +9,12 @@ Starting an Oracle database server instance is as simple as executing
 $ docker run -d -it --name <oracle-db> store/oracle/database-enterprise:12.2.0.1
 
 Stored Proc
-https://www.mkyong.com/oracle/oracle-stored-procedures-hello-world-examples/
 
-CREATE OR REPLACE PROCEDURE procOneOUTParameter(outParam1 OUT VARCHAR2)
+CREATE OR REPLACE PROCEDURE procSleep(param1 IN NUMBER, outParam1 OUT VARCHAR2)
 IS
 BEGIN
-
-  outParam1 := 'Hello World OUT parameter';
+  DBMS_LOCK.SLEEP(param1);
+  outParam1 := 'Hello! I am awake';
 
 END;
 /
