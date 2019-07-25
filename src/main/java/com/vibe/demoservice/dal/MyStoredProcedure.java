@@ -12,8 +12,8 @@ public class MyStoredProcedure extends StoredProcedure {
 
     @Autowired
     public MyStoredProcedure(JdbcTemplate jdbcTemplate) {
-        super(jdbcTemplate, "? procOneOUTParameter");
-        declareParameter(new SqlOutParameter("results_cursor", OracleTypes.VARCHAR));
+        super(jdbcTemplate, "procOneOUTParameter");
+        declareParameter(new SqlOutParameter("out", OracleTypes.VARCHAR));
         compile();
     }
 }

@@ -10,3 +10,12 @@ $ docker run -d -it --name <oracle-db> store/oracle/database-enterprise:12.2.0.1
 
 Stored Proc
 https://www.mkyong.com/oracle/oracle-stored-procedures-hello-world-examples/
+
+CREATE OR REPLACE PROCEDURE procOneOUTParameter(outParam1 OUT VARCHAR2)
+IS
+BEGIN
+
+  outParam1 := 'Hello World OUT parameter';
+
+END;
+/
