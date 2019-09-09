@@ -8,9 +8,15 @@ Starting an Oracle database server instance is as simple as executing
 
 $ docker run -d -it --name oracle-db -P store/oracle/database-enterprise:12.2.0.1
 
+docker exec -it <container-id> bash -c "source /home/oracle/.bashrc; sqlplus /nolog"
+
+SQL> connect sys / as sysdba
+
+% default password : Oradoc_db1
+
 Stored Proc
 
-CREATE OR REPLACE PROCEDURE procSleep(param1 IN NUMBER, outParam1 OUT VARCHAR2)
+SQL> CREATE OR REPLACE PROCEDURE procSleep(param1 IN NUMBER, outParam1 OUT VARCHAR2)
 IS
 BEGIN
   DBMS_LOCK.SLEEP(param1);
