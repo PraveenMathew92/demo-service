@@ -24,3 +24,13 @@ BEGIN
 
 END;
 /
+
+Call the stored proc
+
+DECLARE
+msg VARCHAR2(100);
+BEGIN
+procSleep(5, msg);
+dbms_output.put_line(msg);
+END;
+/
